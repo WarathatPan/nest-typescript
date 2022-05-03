@@ -3,13 +3,11 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Injectable } from '@nestjs/common';
 
 import SignUpDto from '@v1/auth/dto/sign-up.dto';
-import { PaginationParamsInterface } from 'src/common/interfaces/pagination-params.interface';
-import { PaginatedUsersInterface } from 'src/common/interfaces/paginatedEntity.interface';
+import { PaginationParamsInterface } from '@interfaces/pagination-params.interface';
+import { PaginatedUsersInterface } from '@interfaces/paginatedEntity.interface';
 import { UserDocument, User } from '@v1/users/schemas/users.schema';
-
+import PaginationUtils from '@utils/pagination.utils';
 import UpdateUserDto from './dto/update-user.dto';
-
-import PaginationUtils from 'src/common/utils/pagination.utils';
 
 @Injectable()
 export default class UsersRepository {
